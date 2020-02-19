@@ -1,0 +1,32 @@
+<head-bar></head-bar>
+
+<nav class="nav-extended bot-nav">
+  <div class="nav-content">
+    <ul class="tabs tabs-transparent">
+      <li class="tab"><a href="#!/main">ME</a></li>
+      <li class="tab"><a href="#!/add">ADD</a></li>
+      <li class="tab"><a href="#!/borrow">BORROW</a></li>
+      <li class="tab"><a class="active">SEARCH</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="library">
+  <div class="row">
+    <div class="col s12 m12">
+      <div class="card">
+        <div class="card-content">
+          <span class="card-title">{{activeUser.username}}</span>
+          <span class="card-title" ng-if="activeUser.history.length == 0 || activeUser.history[0].active == 0">No Active Reading</span>
+          <span class="card-title" ng-if="activeUser.history[0].active == 1">{{activeUser.history[0].bookid}} - {{activeUser.history[0].bookname}} - {{activeUser.history[0].bookwriter}}</span>
+          <div ng-if="(activeUser.active==1 && activeUser.history.length>1) || (activeUser.active==0&&activeUser.history.length>0)">
+              <h4>Book History</h4>
+              <span class="card-title" ng-repeat="x in activeUser.history track by $index" ng-if="x.active == 0">
+                {{x.bookid}} - {{x.bookname}} - {{x.bookwriter}}
+              </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>        
+</div>

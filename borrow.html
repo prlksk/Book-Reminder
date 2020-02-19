@@ -1,0 +1,53 @@
+<head-bar></head-bar>
+
+<nav class="nav-extended bot-nav">
+  <div class="nav-content">
+    <ul class="tabs tabs-transparent">
+      <li class="tab"><a href="#!/main">ME</a></li>
+      <li class="tab"><a href="#!/add">ADD</a></li>
+      <li class="tab"><a class="active">BORROW</a></li>
+      <li class="tab"><a href="#!/search">SEARCH</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="library">
+  <div class="row">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s12">
+          <input placeholder="Book name" id="booknamesearch" type="text" class="validate">
+          <div ng-click="bookSearch()">
+            <a class="btn-flat">Search</a>
+          </div>
+          <div>
+            <a href="#!/add" class="btn-flat">Add Book</a>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="row">
+    <div class="col s12 m12">
+      <div class="card" ng-if="bookSearchResults.length == 0">
+        <div class="card-content">
+          <span class="card-title">Can't find any book</span>
+        </div>
+      </div>
+      <div class="card" ng-if="bookSearchResults != undefined" ng-repeat="x in bookSearchResults track by $index">
+        <div class="card-content">
+          <span class="card-title">{{x.bookid}} - {{x.bookname}} - {{x.bookwriter}}</span>
+          <span class="card-title" ng-if="x.bookreader != null">{{x.bookreader}} is reading this book</span>
+          <input placeholder="Start Time" id="startTime" type="date" class="validate" ng-show="x.select">
+          <div ng-click="selectBook(x)" ng-show="selectedBook.bookid != x.bookid" ng-if="x.bookreader == null && me.active == 0">
+            <a class="btn-flat">Borrow</a>
+          </div>
+          <div ng-click="borrowBook()" ng-show="selectedBook.bookid == x.bookid">
+            <a class="btn-flat">Borrow</a>
+          </div>
+          <span class="card-title" ng-if="me.active == 1">You're already borrow a book</span>
+        </div>
+      </div>
+    </div>
+  </div>        
+</div>

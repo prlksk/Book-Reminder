@@ -1,0 +1,209 @@
+@font-face {
+    font-family: 'poppinsMedium';
+    src: url(font/poppins/Poppins-Medium.ttf);
+}
+@font-face {
+    font-family: 'poppinsSemibold';
+    src: url(font/poppins/Poppins-SemiBold.ttf);
+}
+:root{
+	--library-color: #CE0505;
+}
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
+    -khtml-box-shadow: 0 0 0 30px white inset !important;
+    -moz-box-shadow: 0 0 0 30px white inset !important;
+    -ms-box-shadow: 0 0 0 30px white inset !important;
+    box-shadow: 0 0 0 30px white inset !important;
+}
+input:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
+    -khtml-box-shadow: 0 0 0 30px white inset !important;
+    -moz-box-shadow: 0 0 0 30px white inset !important;
+    -ms-box-shadow: 0 0 0 30px white inset !important;
+    box-shadow: 0 0 0 30px white inset !important;
+}
+body{
+	-webkit-touch-callout: none;
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+	   -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+}
+
+
+.btn-flat{
+	background-color: var(--library-color);
+	color: white !important;
+	width: 100%;
+	margin-top: 10px;
+}
+.top-nav{
+	top: 0;
+	margin-top: 0;
+}
+.bot-nav{
+	top: unset !important;
+	margin-top: unset !important;
+	bottom: 0;
+	margin-bottom: 0;
+	height: 48px !important;
+}
+
+.library{
+	right: 0;
+    padding-top: 48px;
+	z-index: 1;
+	width: 100%;
+	height: 100vh;
+	position: absolute;
+	background-color: white;
+}
+nav{
+	right: 0;
+	width: 100%;
+	box-shadow: unset;
+	--webkit-box-shadow: unset;
+	line-height: 48px !important;
+}
+.nav-extended{
+	top: 0;
+	z-index: 2;
+	position: fixed;
+	margin-top: 0px;
+	background-color: var(--library-color);
+}
+.nav-extended .nav-wrapper{
+	height: 49px !important;
+	min-height: 49px !important;
+}
+.nav-extended .nav-wrapper .brand-logo{
+	font-size: 24px;
+	font-weight: 300;
+	line-height: 49px;
+	text-align: center;
+	
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+.nav-extended .nav-wrapper .brand-logo i{
+	line-height: 49px;
+}
+.nav-extended .nav-content a span{
+	font-size: 1.5rem;
+}
+.nav-extended .nav-content .tabs .tab{
+	width: 25%;
+}
+.nav-extended .nav-content .tabs .tab a i{
+	font-size: 30px !important;
+    line-height: 50px !important;
+}
+.connectGenel{
+	padding: 5vh 6% 0 6%;
+}
+.connectForm {
+	padding-top: 5%;
+}
+.connectForm a{
+	float: left;
+    box-shadow: none;
+    font-size: 1.15rem;
+    -webkit-box-shadow: none;
+	text-transform: lowercase;
+	background-color: var(--library-color);
+}
+.connectForm .input-field p label span a{
+	color: black;
+	background-color: unset;
+}
+.connectForm h6 a {
+    background-color: unset;
+	color: black;
+}
+.connectForm .right-side{
+	float: left;
+	margin-left: 20px;
+    line-height: 1.15rem;
+}
+.connectForm .input-field input:focus{
+    box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    border-bottom: 1px solid var(--library-color) !important;
+}
+.connectForm .input-field input:not([type='password']){
+    text-transform: lowercase;
+}
+
+.card{
+	margin: 0;
+	box-shadow: none;
+	border-radius: 0;
+	border-bottom: 0.1px solid #ccc;
+}
+.card .card-content{
+	padding: 15px 20px 10px;
+	text-align: center;
+}
+.card .card-content a{
+	color: var(--library-color);
+}
+.card .card-content .card-title{
+	color: #111;
+  	font-weight: 500;
+	line-height: 16px;
+	font-size: 1.5rem;
+	word-wrap: break-word;
+    padding-bottom: 5px;
+	margin-bottom: unset;
+}
+.card .card-content .card-title span{
+	color: #555;
+	font-size: 16px;
+  	font-weight: 100;
+}
+
+ul:not(.browser-default) {
+    padding-left: 0.1px;
+    list-style-type: none;
+}
+
+.pace {
+  -webkit-pointer-events: none;
+  pointer-events: none;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+.pace.pace-inactive .pace-progress {
+  display: none;
+}
+.pace .pace-progress {
+  position: fixed;
+  z-index: 2000;
+  top: 0;
+  right: 0;
+  height: 49px;
+  width: 100%;
+  background-color: var(--library-color);
+
+  -webkit-transform: translate3d(0, 0, 0) !important;
+  -ms-transform: translate3d(0, 0, 0) !important;
+  transform: translate3d(0, 0, 0) !important;
+}
+.pace .pace-progress:after {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: .5rem;
+  content: attr(data-progress-text);
+  font-family: "Helvetica Neue", sans-serif;
+  font-weight: 100;
+  font-size: 3.5rem;
+  line-height: 1;
+  text-align: right;
+  color: whitesmoke;
+}

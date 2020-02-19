@@ -1,0 +1,44 @@
+<head-bar></head-bar>
+
+<nav class="nav-extended bot-nav">
+  <div class="nav-content">
+    <ul class="tabs tabs-transparent">
+      <li class="tab"><a href="#!/main">ME</a></li>
+      <li class="tab"><a href="#!/add">ADD</a></li>
+      <li class="tab"><a href="#!/borrow">BORROW</a></li>
+      <li class="tab"><a class="active">SEARCH</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="library">
+  <div class="row">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s12">
+          <input placeholder="User Name" id="usersearch" type="text" class="validate">
+          <div ng-click="userSearch()">
+            <a class="btn-flat">Search</a>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="row">
+    <div class="col s12 m12">
+      <div class="card" ng-if="userSearchResults.length == 0">
+        <div class="card-content">
+          <span class="card-title">Can't find any user</span>
+        </div>
+      </div>
+      <div class="card" ng-if="userSearchResults != undefined && x.username != me.username" ng-repeat="x in userSearchResults track by $index">
+        <div class="card-content">
+          <span class="card-title">{{x.username}}</span>
+          <div ng-click="visitProfile(x)">
+            <a class="btn-flat">Visit Profile</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>        
+</div>
